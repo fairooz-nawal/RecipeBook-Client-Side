@@ -7,6 +7,7 @@ import Home from "../Pages/Home";
 import AllRecipe from "../Pages/AllRecipe";
 import AddRecipe from "../Pages/AddRecipe";
 import MyRecipee from "../Pages/MyRecipee";
+import Error from "../Pages/Error";
 
 export const router = createBrowserRouter([
   {
@@ -30,7 +31,10 @@ export const router = createBrowserRouter([
         path:"/myRecipe",
         Component: MyRecipee
       },
-
     ]
   },
+  {
+    path: "*",
+    Component:Error
+  }
 ]);
