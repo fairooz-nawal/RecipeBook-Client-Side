@@ -8,7 +8,7 @@ const Navbar = () => {
         <li><NavLink to="/myRecipe" className={({ isActive }) => isActive ? "text-amber-200 josefin border-b-2 border-amber-200 text-xl" : "text-white josefin text-xl"}>My Recipe</NavLink></li>
     </>
     return (
-        <div className="navbar bg-[#0b1315] shadow-sm py-8 px-2 md:px-[100px] lg:px-[100px]">
+        <div className="navbar bg-[#0b1315] fixed top-0 z-5 shadow-sm py-8 px-2 md:px-[100px] lg:px-[100px]">
             <div className="navbar-start">
                 <div className="dropdown">
                     <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden ">
