@@ -1,2 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Tangerine:wght@400;700&display=swap');
 @import "tailwindcss";
-@plugin "daisyui";
+ @plugin "daisyui" {
+  themes: abyss --default;
+ }
+
+.tang {
+  font-family: "Tangerine", cursive;
+  font-style: normal;
+}
+
+.oswald {
+  font-family: "Oswald", sans-serif;
+  font-style: normal;
+}
+
+.josefin {
+  font-family: "Josefin Sans", sans-serif;
+  font-style: normal;
+}
