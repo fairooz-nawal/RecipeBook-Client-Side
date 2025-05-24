@@ -4,7 +4,7 @@ import cus2 from "../assets/customer-2.png"
 import cus3 from "../assets/customer-3.png"
 const FeedBack = () => {
     return (
-        <div className="border-x-2 border-amber-300  max-w-full md:max-w-5xl lg:max-w-7xl mx-auto bg-[#0b1315] py-[50px]">
+        <div className="border-x-2 border-amber-300 border-b-2 border-b-amber-300 max-w-full md:max-w-5xl lg:max-w-7xl mx-auto bg-[#0b1315] py-[50px]">
             <div className="w-3/4 mx-auto">
                  <h1 className="oswald text-white text-center text-2xl md:text-5xl lg:text-5xl font-bold">Feedback of<span className="text-amber-300"> our customers</span> </h1><br /><br /><br />
             </div>
