@@ -7,23 +7,24 @@ const DetailRecipe = () => {
     const { recipes} = useContext(ContextAPI);
     const { id } = useParams();
     const singleRecipe = recipes.find(recipe => recipe._id == id);
+    
     const { image, title, ingredients, instructions, cuisine, preparation, category, rating } = singleRecipe;
+
     const [totalLike, setLike] = useState(rating);
     useEffect(()=>{
         setLike(rating);
+        console.log("Rating updated:", rating);   
     },[rating]);
 
-    const oldRating = rating;
-
     const handleLike = (id) => {
-        const newRatingNo = parseInt(oldRating) + 1;
+        const newRatingNo = totalLike + 1;
         const newrating = { rating: newRatingNo };
+        console.log(newRatingNo, newrating);
 
         fetch(`http://localhost:3000/recipe/${id}`, {
             method: 'PATCH',
             headers: {
                 'content-type': 'application/json',
-                // 'authorization': `Bearer ${token}` // Optional: add if needed
             },
             body: JSON.stringify(newrating)
         })

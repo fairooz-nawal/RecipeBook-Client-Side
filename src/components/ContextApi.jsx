@@ -18,7 +18,7 @@ const AuthProvider = ({children}) => {
     }
   }
   fetchRecipes()
-}, []);
+}, [recipes]);
    
 
 const signUpUser = (email, password) => {

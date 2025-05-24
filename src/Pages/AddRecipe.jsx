@@ -6,13 +6,13 @@ const AddRecipe = () => {
         event.preventDefault();
         const formData = new FormData(event.target);
         const data = Object.fromEntries(formData);
-
+        const rating = parseInt(data.rating, 0);
         fetch("http://localhost:3000/recipe", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
             },
-            body: JSON.stringify(data),
+            body: JSON.stringify({ ...data, rating: rating }),
         })
             .then(res => res.json())
             .then(data => {
