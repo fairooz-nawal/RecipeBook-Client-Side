@@ -65,7 +65,7 @@ const AddRecipe = () => {
                             <input type="number" className="input input-bordered w-full" name="preparation" placeholder="e.g. 30" />
 
                             <label className="label">Categories</label>
-                            <select className="select select-bordered w-full" name="cuisine">
+                            <select className="select select-bordered w-full" name="category">
                                 <option value="Breakafast">Breakfast</option>
                                 <option value="Lunch">Lunch</option>
                                 <option value="Dinner">Dinner</option>

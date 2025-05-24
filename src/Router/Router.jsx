@@ -21,6 +21,7 @@ export const router = createBrowserRouter([
       },
       {
         path:"/allRecipe",
+        loader: ()=> fetch("http://localhost:3000/recipe"),
         Component: AllRecipe
       },
       {

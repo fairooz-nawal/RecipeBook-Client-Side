@@ -16,7 +16,7 @@ const FeedBack = () => {
                     <p className="tang text-amber-300 text-3xl">Client Feedhack</p>
                     <h1 className="oswald text-white text-2xl md:text-5xl lg:text-5xl font-bold">What believe between <span className="text-amber-300"> our customers</span> </h1>
                     <p className="josefin text-gray-400">But the shaft is dark at the gate threshold. The whole wing is situated next to the large receptacle.</p>
-                    <button button className="btn border-2 border-amber-300 p-2 hover:bg-amber-300 hover:text-white text-sm md:text-lg lg:text-xl">View More</button>
+                    <button className="btn border-2 border-amber-300 p-2 hover:bg-amber-300 hover:text-white text-sm md:text-lg lg:text-xl">View More</button>
                     <br />
                     <div className="carousel rounded-box w-full">
                         <div className="carousel-item w-full">
