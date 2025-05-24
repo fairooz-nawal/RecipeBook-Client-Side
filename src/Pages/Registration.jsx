@@ -9,18 +9,29 @@ const Registration = () => {
     const [error, setError] = useState('');
     const navigate = useNavigate();
     const location = useLocation();
-    console.log("this is registration", location);
     const handleSubmitForm = (e) => {
         e.preventDefault();
+         const name = e.target.name.value;
+        const photo = e.target.Photo.value;
         const email = e.target.email.value;
         const password = e.target.password.value;
         const passwordRegex = /^(?=.*[A-Z])(?=.*[a-z]).{6,}$/;
+         const userDetails = { displayName: name, photoURL: photo };
+        updateUser(userDetails);
         setError('');
         if (passwordRegex.test(password)) {
             //creating new User
             signUpUser(email, password)
                 .then((result) => {
                     const user = result.user;
+                     updateUser({displayName: name, photoURL: photo})
+                    .then(() => {
+                           setUser({ ...user, displayName: name, photoURL: photo});
+                         })
+                         .catch((error) => {
+                        //    console.log(error);
+                           setUser(user);
+                         });
                     if (user) {
                         Swal.fire({
                             title: "Registration Done Successfully",
@@ -47,7 +58,7 @@ const Registration = () => {
                 });
         }
         else {
-            setError('Password must be at least 6 characters long and contain at least one uppercase letter.')
+            setError('Password must be at least 6 characters long and contain at least one uppercase letter and one lowercase letter.')
         }
 
 
@@ -64,7 +75,7 @@ const Registration = () => {
                             draggable: true
                         });
                     }
-                navigate(location?.state || '/');
+                navigate( '/');
             })
             .catch((error) => {
                 const errorMessage = error.message;

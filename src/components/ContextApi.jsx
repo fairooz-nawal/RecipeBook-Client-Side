@@ -1,6 +1,6 @@
 import React, { createContext, useEffect, useState } from 'react';
 import auth from '../Firebase/Firebase.config';
-import { createUserWithEmailAndPassword, GoogleAuthProvider, onAuthStateChanged, signInWithPopup, signInWithEmailAndPassword, signOut } from "firebase/auth";
+import { createUserWithEmailAndPassword, updateProfile, GoogleAuthProvider, onAuthStateChanged, signInWithPopup, signInWithEmailAndPassword, signOut } from "firebase/auth";
 import Swal from 'sweetalert2'
 
 export const ContextAPI = createContext('');
@@ -43,6 +43,10 @@ const AuthProvider = ({ children }) => {
   const signOutUser = () => {
     setLoading(false);
     return signOut(auth);
+  }
+
+  const updateUser = (userDetail) => {
+    return updateProfile(auth.currentUser, userDetail)
   }
 
   const handleDelete = (id) => {
@@ -103,7 +107,7 @@ const AuthProvider = ({ children }) => {
     };
   }, []);
   const authContext = {
-    recipes, signUpUser, signUpWithGoogle, signInUser, user, signOutUser, setLoading,loading, setRecipes,handleDelete
+    recipes, signUpUser, signUpWithGoogle, signInUser, user, setUser, signOutUser, setLoading,loading, setRecipes,handleDelete,updateUser
   }
 
   return (
