@@ -12,6 +12,7 @@ import DetailRecipe from "../Pages/DetailRecipe";
 import AuthLayout from "../Layout/AuthLayout"
 import Registration from "../Pages/Registration";
 import Login from "../Pages/Login";
+import Update from "../Pages/Update";
 export const router = createBrowserRouter([
   {
     path: "/",
