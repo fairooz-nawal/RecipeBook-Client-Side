@@ -11,6 +11,7 @@ import Error from "../Pages/Error";
 import DetailRecipe from "../Pages/DetailRecipe";
 import AuthLayout from "../Layout/AuthLayout"
 import Registration from "../Pages/Registration";
+import Login from "../Pages/Login";
 export const router = createBrowserRouter([
   {
     path: "/",
@@ -49,6 +50,10 @@ export const router = createBrowserRouter([
         index: true,
         path: "/auth/registration",
         Component: Registration
+      },
+      {
+        path: "/auth/login",
+        Component: Login
       }
     ]
   },
