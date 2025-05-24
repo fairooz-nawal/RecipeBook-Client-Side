@@ -1,6 +1,6 @@
 import React, { createContext, useEffect, useState } from 'react';
 import auth from '../Firebase/Firebase.config';
-import { createUserWithEmailAndPassword,GoogleAuthProvider,onAuthStateChanged, signInWithPopup,signInWithEmailAndPassword  } from "firebase/auth";
+import { createUserWithEmailAndPassword,GoogleAuthProvider,onAuthStateChanged, signInWithPopup,signInWithEmailAndPassword,signOut } from "firebase/auth";
 export const ContextAPI = createContext('');
 
 const AuthProvider = ({children}) => {
@@ -37,6 +37,11 @@ const signInUser = (email, password) => {
   return signInWithEmailAndPassword(auth, email, password);
 }
 
+const signOutUser = () => {
+  setLoading(false);
+  return signOut(auth);
+}
+
 useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
       if (currentUser) {
@@ -53,7 +58,7 @@ useEffect(() => {
     };
   }, []);
     const authContext = {
-    recipes,signUpUser, signUpWithGoogle,signInUser,user
+    recipes,signUpUser, signUpWithGoogle,signInUser,user,signOutUser,loading
     }
 
     return (
