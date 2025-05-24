@@ -12,7 +12,8 @@ import DetailRecipe from "../Pages/DetailRecipe";
 import AuthLayout from "../Layout/AuthLayout"
 import Registration from "../Pages/Registration";
 import Login from "../Pages/Login";
-import Update from "../Pages/Update";
+import ProtectedRoute from "./ProtectedRoutes";
+
 export const router = createBrowserRouter([
   {
     path: "/",
@@ -31,16 +32,16 @@ export const router = createBrowserRouter([
       {
         path:"/recipeDetails/:id",
         loader: ({params})=> fetch(`http://localhost:3000/recipe/${params.id}`),
-        Component: DetailRecipe
+        element:<ProtectedRoute><DetailRecipe/></ProtectedRoute>,
       },
       {
         path:"/addRecipe",
-        Component: AddRecipe
+        element: <ProtectedRoute><AddRecipe/></ProtectedRoute>,
       },
       {
         path:"/myRecipe/:email",
         loader: ({params}) => fetch(`http://localhost:3000/recipe/${params.email}`),
-        Component: MyRecipee
+         element: <ProtectedRoute><MyRecipee/></ProtectedRoute>,
       },
     ]
   },

@@ -9,33 +9,18 @@ const Registration = () => {
     const [error, setError] = useState('');
     const navigate = useNavigate();
     const location = useLocation();
+    console.log("this is registration", location);
     const handleSubmitForm = (e) => {
         e.preventDefault();
-        // const name = e.target.name.value;
-        // const photo = e.target.Photo.value;
         const email = e.target.email.value;
         const password = e.target.password.value;
         const passwordRegex = /^(?=.*[A-Z])(?=.*[a-z]).{6,}$/;
-        // const userDetails = { displayName: name, photoURL: photo };
-        // updateUser(userDetails);
-
         setError('');
         if (passwordRegex.test(password)) {
             //creating new User
             signUpUser(email, password)
                 .then((result) => {
                     const user = result.user;
-                    // // console.log(user);
-                    // updateUser({ displayName: name, photoURL: photo })
-                    //     .then(() => {
-                    //         setUser({ ...user, displayName: name, photoURL: photo });
-                    //     })
-                    //     .catch((error) => {
-                    //         //    console.log(error);
-                    //         setUser(user);
-                    //     });
-
-                    //success message
                     if (user) {
                         Swal.fire({
                             title: "Registration Done Successfully",
@@ -93,10 +78,11 @@ const Registration = () => {
                     progress: undefined,
                     theme: "light",
                     });
-                 setError(errorMessage);
                     navigate('/auth/register');
             });
     }
+
+    
     return (
         <div className='bg-secondary'>
             <ToastContainer />

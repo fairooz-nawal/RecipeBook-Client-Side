@@ -9,14 +9,11 @@ const Login = () => {
     const [error, setError] = useState('');
     const navigate = useNavigate();
     const location = useLocation();
+    console.log("this is login", location);
     const handleSubmitForm = (e) => {
         e.preventDefault();
-        // const name = e.target.name.value;
-        // const photo = e.target.Photo.value;
         const email = e.target.email.value;
         const password = e.target.password.value;
-        // const userDetails = { displayName: name, photoURL: photo };
-        // updateUser(userDetails);
 
         setError('');
             signInUser(email, password)
@@ -77,6 +74,10 @@ const Login = () => {
                 navigate('/auth/login');
             });
     }
+
+     const registrationLocation = () => {
+        navigate('/auth/registration', { state: location.state });
+    }
     return (
         <div className='bg-secondary'>
             <ToastContainer />
@@ -95,7 +96,9 @@ const Login = () => {
                             <div className="flex justify-between">
                                 <div>
                                     Haven't Register Yet?
+                                   <button onClick={registrationLocation}>
                                     <Link to="/auth/registration" className="btn text-white bg-amber-300 p-2 hover:bg-white hover:text-amber-300 ">Register Now</Link>
+                                    </button> 
                                 </div>
                                 <button className="btn text-white bg-amber-300 p-2 hover:bg-white hover:text-amber-300 ">Login</button><br />
                             </div>

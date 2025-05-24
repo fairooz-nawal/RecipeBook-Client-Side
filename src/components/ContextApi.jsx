@@ -22,7 +22,7 @@ const AuthProvider = ({ children }) => {
       }
     }
     fetchRecipes()
-  }, [recipes]);
+  }, []);
 
 
   const signUpUser = (email, password) => {
@@ -103,7 +103,7 @@ const AuthProvider = ({ children }) => {
     };
   }, []);
   const authContext = {
-    recipes, signUpUser, signUpWithGoogle, signInUser, user, signOutUser, loading, setRecipes,handleDelete
+    recipes, signUpUser, signUpWithGoogle, signInUser, user, signOutUser, setLoading,loading, setRecipes,handleDelete
   }
 
   return (
