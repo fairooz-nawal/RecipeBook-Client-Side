@@ -1,18 +1,23 @@
+import { useContext } from 'react';
 import Swal from 'sweetalert2'
+import { ContextAPI } from '../components/ContextApi';
 
 const AddRecipe = () => {
-
+    const { user} = useContext(ContextAPI);
     const handleSubmit = (event) => {
         event.preventDefault();
         const formData = new FormData(event.target);
         const data = Object.fromEntries(formData);
+        const email = user?.email;
         const rating = parseInt(data.rating, 0);
         fetch("http://localhost:3000/recipe", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
             },
-            body: JSON.stringify({ ...data, rating: rating }),
+            body: JSON.stringify({ ...data, rating: rating,
+                email: email, 
+             }),
         })
             .then(res => res.json())
             .then(data => {

@@ -37,7 +37,8 @@ export const router = createBrowserRouter([
         Component: AddRecipe
       },
       {
-        path:"/myRecipe",
+        path:"/myRecipe/:email",
+        loader: ({params}) => fetch(`http://localhost:3000/recipe/${params.email}`),
         Component: MyRecipee
       },
     ]

@@ -7,7 +7,7 @@ const SingleRecipe = ({ recipe }) => {
     return (
         <div className="card bg-[#0b1315]  border-2 border-amber-300 shadow-sm">
             <figure>
-                <img className="w-[300px] h-[300px] rounded-2xl"src={image}
+                <img className="w-[300px] h-[250px] rounded-2xl"src={image}
                     alt="Shoes" />
             </figure>
             <div className="card-body">

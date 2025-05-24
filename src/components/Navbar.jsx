@@ -8,7 +8,7 @@ const Navbar = () => {
         <li><NavLink to="/allRecipe" className={({ isActive }) => isActive ? "text-amber-200 josefin border-b-2 border-amber-200 text-xl" : "text-white josefin text-xl"}>All Recipe</NavLink></li>
         {
             user ? <> <li><NavLink to="/addRecipe" className={({ isActive }) => isActive ? "text-amber-200 josefin border-b-2 border-amber-200 text-xl" : "text-white josefin text-xl"}>Add Recipe</NavLink></li>
-                <li><NavLink to="/myRecipe" className={({ isActive }) => isActive ? "text-amber-200 josefin border-b-2 border-amber-200 text-xl" : "text-white josefin text-xl"}>My Recipe</NavLink></li>
+                <li><NavLink to={`/myRecipe/${user.email}`} className={({ isActive }) => isActive ? "text-amber-200 josefin border-b-2 border-amber-200 text-xl" : "text-white josefin text-xl"}>My Recipe</NavLink></li>
             </> : <></>
         }
     </>
@@ -45,7 +45,7 @@ const Navbar = () => {
             <div className="navbar-end">
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-2">
                     {
-                        user ? <div className="dropdown">
+                        user ? <div className="dropdown bg-[#0b1315]">
                             <div tabIndex={0} role="button" className="btn m-1">
                                 <img src={user.photoURL} alt="User" className="w-20 h-20 rounded-full border-2 border-amber-200" />
                             </div>

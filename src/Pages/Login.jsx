@@ -74,7 +74,6 @@ const Login = () => {
                     progress: undefined,
                     theme: "light",
                 });
-                setError(errorMessage);
                 navigate('/auth/login');
             });
     }
