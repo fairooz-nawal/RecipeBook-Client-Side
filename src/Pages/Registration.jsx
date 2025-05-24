@@ -67,7 +67,34 @@ const Registration = () => {
 
     }
 
-   
+    const handleGoogleSignIn = () => {
+        signUpWithGoogle()
+            .then((result) => {
+                const user = result.user;
+                if (user) {
+                        Swal.fire({
+                            title: "Registration Done Successfully",
+                            icon: "success",
+                            draggable: true
+                        });
+                    }
+                // navigate(location?.state || '/');
+            })
+            .catch((error) => {
+                const errorMessage = error.message;
+                // toast.error(errorMessage, {
+                //     position: "top-right",
+                //     autoClose: 5000,
+                //     hideProgressBar: false,
+                //     closeOnClick: false,
+                //     pauseOnHover: true,
+                //     draggable: true,
+                //     progress: undefined,
+                //     theme: "light",
+                //     });
+                //     navigate('/auth/register');
+            });
+    }
     return (
         <div className='bg-secondary'>
             <ToastContainer />
