@@ -30,7 +30,7 @@ const Navbar = () => {
             <div className="navbar-end">
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-2">
                     <Link className='btn-xs md:btn-lg lg:btn-lg border-2 border-amber-200 p-2 hover:bg-amber-300 hover:text-white text-sm md:text-lg lg:text-xl rounded-xl' >Sign In</Link>
-                    <Link className='btn-xs md:btn-lg lg:btn-lg border-2 border-amber-200 p-2 hover:bg-amber-300 hover:text-white text-sm md:text-lg lg:text-xl rounded-xl' >Sign Up</Link>
+                    <Link to="/auth/registration" className='btn-xs md:btn-lg lg:btn-lg border-2 border-amber-200 p-2 hover:bg-amber-300 hover:text-white text-sm md:text-lg lg:text-xl rounded-xl' >Sign Up</Link>
                 </div>
             </div>
         </div>

@@ -1,8 +1,10 @@
 import React, { createContext, useEffect, useState } from 'react';
-
+import auth from '../Firebase/Firebase.config';
+import { createUserWithEmailAndPassword,GoogleAuthProvider, signInWithPopup  } from "firebase/auth";
 export const ContextAPI = createContext('');
 
 const AuthProvider = ({children}) => {
+    const provider = new GoogleAuthProvider();
     const [loading, setLoading] = useState(true);
     const [recipes, setRecipes] = useState([]);
     useEffect(()=>{
@@ -17,9 +19,17 @@ const AuthProvider = ({children}) => {
   }
   fetchRecipes()
 }, []);
-    
+   
+
+const signUpUser = (email, password) => {
+  return createUserWithEmailAndPassword(auth, email, password)
+}
+
+const  signUpWithGoogle = () =>{
+  return signInWithPopup(auth, provider);
+}
     const authContext = {
-    recipes
+    recipes,signUpUser, signUpWithGoogle
     }
 
     return (

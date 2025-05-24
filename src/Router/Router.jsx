@@ -9,7 +9,8 @@ import AddRecipe from "../Pages/AddRecipe";
 import MyRecipee from "../Pages/MyRecipee";
 import Error from "../Pages/Error";
 import DetailRecipe from "../Pages/DetailRecipe";
-
+import AuthLayout from "../Layout/AuthLayout"
+import Registration from "../Pages/Registration";
 export const router = createBrowserRouter([
   {
     path: "/",
@@ -38,6 +39,17 @@ export const router = createBrowserRouter([
         path:"/myRecipe",
         Component: MyRecipee
       },
+    ]
+  },
+  {
+    path: "/auth",
+    Component: AuthLayout,
+    children: [
+      {
+        index: true,
+        path: "/auth/registration",
+        Component: Registration
+      }
     ]
   },
   {
