@@ -53,7 +53,7 @@ useEffect(() => {
     };
   }, []);
     const authContext = {
-    recipes,signUpUser, signUpWithGoogle,signInUser
+    recipes,signUpUser, signUpWithGoogle,signInUser,user
     }
 
     return (
