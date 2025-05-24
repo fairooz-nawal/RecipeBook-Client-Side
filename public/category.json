@@ -1,0 +1,22 @@
+[
+  {
+    "id": "1",
+    "category": "Italian"
+  },
+  {
+    "id": "2",
+    "category": "Mexican"
+  },
+  {
+    "id": "3",
+    "category": "Indian"
+  },
+  {
+    "id": "4",
+    "category": "Chinese"
+  },
+  {
+    "id": "5",
+    "category": "Others"
+  }
+]

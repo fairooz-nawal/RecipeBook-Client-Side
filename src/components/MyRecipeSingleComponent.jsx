@@ -42,7 +42,7 @@ const MyRecipeSingleComponent = ({ allrecipe }) => {
                     <p className="josefin text-gray-300">{instructions}</p><br />
                     <p className="oswald text-gray-300 font-bold">Cuisine: <span className='tang text-amber-200 text-2xl'>{cuisine}</span></p>
                     <p className="oswald text-gray-300 font-bold">Preparation: {preparation}</p>
-                    <p className="oswald text-gray-300 font-bold">Category: <span className='tang text-amber-200 text-2xl'>{category}</span></p><br />
+                    <p className="oswald text-gray-300 font-bold">Category: {category}</p><br />
                     <p className="oswald text-gray-300 font-bold">Rating: <span className='text-amber-200 text-2xl'>{rating}</span></p><br />
                     <div className="space-x-3">
                         <label htmlFor="my_modal_6" className="btn btn-primary">Update</label>

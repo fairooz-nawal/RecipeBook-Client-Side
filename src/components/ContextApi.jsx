@@ -10,6 +10,7 @@ const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
   const [recipes, setRecipes] = useState([]);
+  const [light,setLight] = useState(false);
 
   useEffect(() => {
     async function fetchRecipes() {
@@ -106,9 +107,12 @@ const AuthProvider = ({ children }) => {
       unsubscribe();
     };
   }, []);
+
+  const handletheme = () =>{setLight(!light)}
   const authContext = {
-    recipes, signUpUser, signUpWithGoogle, signInUser, user, setUser, signOutUser, setLoading,loading, setRecipes,handleDelete,updateUser
+    recipes, signUpUser, signUpWithGoogle, signInUser, user, setUser, signOutUser, setLoading,loading, setRecipes,handleDelete,updateUser,handletheme,light
   }
+
 
   return (
     <ContextAPI.Provider value={authContext}>

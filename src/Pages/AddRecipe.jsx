@@ -3,21 +3,25 @@ import Swal from 'sweetalert2'
 import { ContextAPI } from '../components/ContextApi';
 
 const AddRecipe = () => {
-    const { user} = useContext(ContextAPI);
+    const { user } = useContext(ContextAPI);
     const handleSubmit = (event) => {
         event.preventDefault();
         const formData = new FormData(event.target);
         const data = Object.fromEntries(formData);
         const email = user?.email;
         const rating = parseInt(data.rating, 0);
+        const category = Array.from(event.target.querySelectorAll('input[name="category"]:checked')).map(checkbox => checkbox.value);
         fetch("http://localhost:3000/recipe", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
             },
-            body: JSON.stringify({ ...data, rating: rating,
-                email: email, 
-             }),
+            body: JSON.stringify({
+                ...data, 
+                category: category,
+                rating: rating,
+                email: email,
+            }),
         })
             .then(res => res.json())
             .then(data => {
@@ -70,13 +74,38 @@ const AddRecipe = () => {
                             <input type="number" className="input input-bordered w-full" name="preparation" placeholder="e.g. 30" />
 
                             <label className="label">Categories</label>
-                            <select className="select select-bordered w-full" name="category">
-                                <option value="Breakafast">Breakfast</option>
-                                <option value="Lunch">Lunch</option>
-                                <option value="Dinner">Dinner</option>
-                                <option value="Dessert">Dessert</option>
-                                <option value="Vegan">Vegan</option>
-                            </select>
+                            <div className="flex flex-wrap gap-2">
+                                <div className="form-control">
+                                    <label className="cursor-pointer label">
+                                        <span className="label-text">Breakfast</span>
+                                        <input type="checkbox" name="category" value="Breakfast" className="checkbox" />
+                                    </label>
+                                </div>
+                                <div className="form-control">
+                                    <label className="cursor-pointer label">
+                                        <span className="label-text">Lunch</span>
+                                        <input type="checkbox" name="category" value="Lunch" className="checkbox" />
+                                    </label>
+                                </div>
+                                <div className="form-control">
+                                    <label className="cursor-pointer label">
+                                        <span className="label-text">Dinner</span>
+                                        <input type="checkbox" name="category" value="Dinner" className="checkbox" />
+                                    </label>
+                                </div>
+                                <div className="form-control">
+                                    <label className="cursor-pointer label">
+                                        <span className="label-text">Dessert</span>
+                                        <input type="checkbox" name="category" value="Dessert" className="checkbox" />
+                                    </label>
+                                </div>
+                                <div className="form-control">
+                                    <label className="cursor-pointer label">
+                                        <span className="label-text">Vegan</span>
+                                        <input type="checkbox" name="category" value="Vegan" className="checkbox" />
+                                    </label>
+                                </div>
+                            </div>
 
                             <input type="number" value="0" name="rating" className="input input-bordered w-full hidden" />
 
