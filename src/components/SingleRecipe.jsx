@@ -1,7 +1,9 @@
-import React from 'react';
+
+import { Link } from 'react-router';
+
 
 const SingleRecipe = ({ recipe }) => {
-    const { image, title, cuisine } = recipe;
+    const { _id,image, title, cuisine } = recipe;
     return (
         <div className="card bg-[#0b1315]  border-2 border-amber-300 shadow-sm">
             <figure>
@@ -12,7 +14,7 @@ const SingleRecipe = ({ recipe }) => {
                 <h2 className="card-title">{title}</h2>
                 <p>{cuisine}</p>
                 <div className="card-actions justify-end">
-                    <button className="btn btn-primary">Details</button>
+                    <Link to={`/recipeDetails/${_id}`} className="btn btn-primary">Details</Link>
                 </div>
             </div>
         </div>

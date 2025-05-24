@@ -8,6 +8,7 @@ import AllRecipe from "../Pages/AllRecipe";
 import AddRecipe from "../Pages/AddRecipe";
 import MyRecipee from "../Pages/MyRecipee";
 import Error from "../Pages/Error";
+import DetailRecipe from "../Pages/DetailRecipe";
 
 export const router = createBrowserRouter([
   {
@@ -21,8 +22,12 @@ export const router = createBrowserRouter([
       },
       {
         path:"/allRecipe",
-        loader: ()=> fetch("http://localhost:3000/recipe"),
         Component: AllRecipe
+      },
+      {
+        path:"/recipeDetails/:id",
+        loader: ({params})=> fetch(`http://localhost:3000/recipe/${params.id}`),
+        Component: DetailRecipe
       },
       {
         path:"/addRecipe",

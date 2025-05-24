@@ -73,7 +73,7 @@ const AddRecipe = () => {
                                 <option value="Vegan">Vegan</option>
                             </select>
 
-                            <input type="number" value="0" readOnly className="input input-bordered w-full hidden" />
+                            <input type="number" value="0" name="rating" className="input input-bordered w-full hidden" />
 
                             <button className="btn btn-primary mt-4 w-full">Add Recipe</button>
 
