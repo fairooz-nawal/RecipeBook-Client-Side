@@ -4,10 +4,10 @@ import SingleRecipe from './SingleRecipe';
 import { Link } from 'react-router';
 import { Slide } from 'react-awesome-reveal';
 const DisplayRecipe = () => {
-    const { recipes } = useContext(ContextAPI);
+    const { recipes,light } = useContext(ContextAPI);
     return (
         <div className="py-[100px] max-w-full md:max-w-5xl lg:max-w-7xl mx-auto border-x-2 border-amber-300 px-5">
-            <h1 className="oswald text-white text-2xl md:text-5xl lg:text-5xl">Our Most Popular <span className="text-amber-300"> Recipes</span> </h1><br />
+            <h1 className={`${light ? ' text-black ':'text-white'}oswald text-2xl md:text-5xl lg:text-5xl`}>Our Most Popular <span className="text-amber-300"> Recipes</span> </h1><br />
             <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 '>
                 <Slide direction="up" duration={1000}>
                     {

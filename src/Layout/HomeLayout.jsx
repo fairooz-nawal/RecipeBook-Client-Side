@@ -6,7 +6,7 @@ import { ContextAPI } from '../components/ContextApi';
 const HomeLayout = () => {
   const {light} = useContext(ContextAPI);
     return (
-        <div className={light?`max-w-full mx-auto bg-lime-100`:`max-w-full mx-auto bg-[#0b1315]`}>
+        <div className={light?`max-w-full mx-auto bg-white`:`max-w-full mx-auto bg-[#0b1315]`}>
            <Navbar></Navbar>
            <Outlet></Outlet>
            <Footer></Footer>

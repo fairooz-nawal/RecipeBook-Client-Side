@@ -1,13 +1,16 @@
 
+import { useContext } from 'react';
 import { Link } from 'react-router';
+import { ContextAPI } from './ContextApi';
 
 
 const SingleRecipe = ({ recipe }) => {
+    const {light } =useContext(ContextAPI);
     const { _id,image, title, cuisine,rating } = recipe;
     return (
-        <div className="card bg-[#0b1315]  border-2 border-amber-300 shadow-sm">
+        <div className={` ${light==true ? 'bg-white' : 'bg-[#0b1315]'} rounded-2xl border-2 border-amber-300 shadow-sm`}>
             <figure>
-                <img className="w-[300px] h-[250px] rounded-2xl"src={image}
+                <img className="w-[300px] h-[250px] rounded-2xl mx-auto"src={image}
                     alt="Shoes" />
             </figure>
             <div className="card-body">
