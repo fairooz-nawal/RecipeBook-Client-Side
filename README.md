@@ -1,12 +1,69 @@
-# React + Vite
+# 🍽️ Recipe Book App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A fully responsive, user-friendly Recipe Book App where food lovers can create, discover, and manage their favorite recipes. This full-stack web application supports features like user authentication, CRUD operations for personal recipes, dynamic top recipes by likes, filtering, liking others' recipes, and much more — providing an engaging platform for food enthusiasts.
 
-Currently, two official plugins are available:
+🔗 **Live Site**: [https://your-recipe-book-app.netlify.app](https://syeda-fairooz-nawal-earl-recipe.netlify.app/)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+📂 **Server Repo**: [https://github.com/your-username/recipe-book-server](https://github.com/Programming-Hero-Web-Course4/b11a10-server-side-fairooz-nawal)  
+📂 **Client Repo**: [https://github.com/your-username/recipe-book-client](https://github.com/Programming-Hero-Web-Course4/b11a10-client-side-fairooz-nawal)
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🚀 Features
+
+- 🔐 **Authentication**  
+  Firebase Authentication with Google login and secure private routes.
+
+- 📝 **Full CRUD Functionality**  
+  Users can create, read, update, and delete their own recipes.
+
+- 📈 **Top Recipes Section**  
+  Displays the 6 most liked recipes using MongoDB's sort & limit.
+
+- ❤️ **Like System**  
+  Users can like recipes (except their own); likes dynamically update in UI and database.
+
+- 🧾 **Filter Recipes**  
+  Filter all recipes by Cuisine Type (e.g., Italian, Mexican, Indian).
+
+- 🌙 **Dark/Light Theme Toggle**  
+  Users can switch between light and dark modes.
+
+- 🔍 **Responsive UI & UX**  
+  Seamlessly works across all devices – desktop, tablet, and mobile.
+
+- 🎨 **Modern UI Animations**  
+  Integrated `Lottie-react` and `React Awesome Reveal` for engaging animations.
+
+---
+
+## 🛠️ Tech Stack
+
+**Frontend**:
+- React
+- Tailwind CSS
+- Daisy UI
+- React Router DOM
+- Lottie React
+- React Awesome Reveal
+- SweetAlert2
+- Toastify
+
+**Backend**:
+- Node.js
+- Express.js
+- MongoDB (Mongoose)
+- Firebase Admin SDK (for auth verification)
+
+**Authentication**:
+- Firebase Authentication (Google & Email/Password)
+
+**Hosting**:
+- Client: Netlify  
+- Server: Vercel  
+- Database: MongoDB Atlas
+
+
+
+
+
